@@ -18,7 +18,7 @@ namespace WorkingWithFiles
             fileName = "Exercise_8_Text_File.txt";
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, subFolder, fileName);
             StreamReader sr = new StreamReader(filePath);
-
+            //var blah = File.ReadAllText(fileName)
 
             
             // Delete the below line when you are writing your code 
@@ -40,15 +40,28 @@ namespace WorkingWithFiles
         public static void Main()
         {
             string subFolder = "TextFiles";
-            string fileName = "Exercise_8_Text_File.txt";
+            string fileName = "Cheese.txt";
 
-            string filePath = Path.Combine(Directory.GetCurrentDirectory, subFolder, fileName);
+            string filePath = Path.Combine(Directory.GetCurrentDirectory().ToString(), subFolder, fileName);
 
-            //var existsOrNot = File.Exists(filePath);
+            var existsOrNot = File.Exists(filePath);
             Console.WriteLine(filePath);
+            Console.WriteLine(existsOrNot);
 
+            var blah = File.ReadAllText(filePath);
+            var blah2 = File.ReadAllLines(filePath);
+            var words = 0;
+            foreach (var item in blah2)
+            {
+                    var number = item.Split(" ").Length;
+                words += number;
+            }
+            Console.WriteLine(words);
 
-            
+            //string jasfhg = "word";
+            //var answer = jasfhg.Split(" ").Length;
+
+            //Console.WriteLine(answer);
         }
     }
 }
