@@ -1,6 +1,7 @@
 using System.Linq;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
 
 namespace WorkingWithFilesTest
 {        
@@ -10,15 +11,15 @@ namespace WorkingWithFilesTest
     // contained in the file.
     [TestClass]
     public class WordCountTest
-    {
+    {        
         [TestMethod]
         public void WordCountWorks()
         {
-            var expected = 258;
+            var expected = 6;
 
-            var actual = WorkingWithFiles.WorkingWithFiles.WordCount("Exercise_8_Text_File");
+            var actual = WorkingWithFiles.WorkingWithFiles.WordCount("WordCounter.txt");
 
-            actual.Should().Be(expected, because: "the file contains 258 words (all the lyrics of 'Never Going To Give You Up')");
+            actual.Should().Be(expected, because: "the file contains 6 words");
         }
 
         [TestMethod]
@@ -26,7 +27,7 @@ namespace WorkingWithFilesTest
         {
             var expected = 1;
 
-            var actual = WorkingWithFiles.WorkingWithFiles.WordCount(/* long word file */);
+            var actual = WorkingWithFiles.WorkingWithFiles.WordCount("SingularLongWord.txt");
 
             actual.Should().Be(expected, because: "the file contains only one word");
         }
@@ -36,7 +37,7 @@ namespace WorkingWithFilesTest
         {
             var expected = 0;
 
-            var actual = WorkingWithFiles.WorkingWithFiles.WordCount(/* empty Text File */);
+            var actual = WorkingWithFiles.WorkingWithFiles.WordCount("EmptyFile.txt");
 
             actual.Should().Be(expected, because: "the file contains no words.");
         }
@@ -49,19 +50,19 @@ namespace WorkingWithFilesTest
         [TestMethod]
         public void LongestWordWorks()
         {
-            var expected = "";
+            var expected = "correctly.";
 
-            var actual = WorkingWithFiles.WorkingWithFiles.WordCount("Exercise_8_Text_File");
+            var actual = WorkingWithFiles.WorkingWithFiles.LongestWord("WordCounter.txt");
 
-            actual.Should().Be(expected, because: "the file contains 258 words (all the lyrics of 'Never Going To Give You Up')");
+            actual.Should().Be(expected, because: "the longest words in the file is 'correctly.', so that is what should be returned");
         }
 
         [TestMethod]
         public void SingularWord()
         {
-            var expected = 1;
+            var expected = "supercalifragilisticexpialidocious";
 
-            var actual = WorkingWithFiles.WorkingWithFiles.WordCount(/*singular word Text File */);
+            var actual = WorkingWithFiles.WorkingWithFiles.LongestWord("SingularLongWord.txt");
 
             actual.Should().Be(expected, because: "the file contains only one word");
         }
@@ -69,9 +70,9 @@ namespace WorkingWithFilesTest
         [TestMethod]
         public void CanTheMethodHandleAnEmptyFile()
         {
-            var expected = 0;
+            var expected = "File is Empty";
 
-            var actual = WorkingWithFiles.WorkingWithFiles.WordCount(/* empty Text File */);
+            var actual = WorkingWithFiles.WorkingWithFiles.LongestWord("EmptyFile.txt");
 
             actual.Should().Be(expected, because: "the file contains no words.");
         }

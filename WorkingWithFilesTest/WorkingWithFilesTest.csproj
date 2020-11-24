@@ -17,4 +17,16 @@
     <ProjectReference Include="..\WorkingWithFiles\WorkingWithFiles.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="TextFiles\EmptyFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TextFiles\SingularLongWord.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TextFiles\WordCounter.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
