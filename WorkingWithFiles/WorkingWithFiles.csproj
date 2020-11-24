@@ -6,10 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="TextFiles\Cheese.txt">
+    <None Remove="TextFiles\TextFile1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TextFiles\EmptyFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TextFiles\Exercise_8_Text_File.txt">
+    <None Update="TextFiles\WordCounter.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="TextFiles\SingularLongWord.txt">
