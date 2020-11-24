@@ -39,7 +39,7 @@ namespace WorkingWithFilesTest
 
             var actual = WorkingWithFiles.WorkingWithFiles.WordCount("EmptyFile.txt");
 
-            actual.Should().Be(expected, because: "the file contains no words.");
+            actual.Should().Be(expected, because: "the file contains no words");
         }
 
     }
@@ -50,11 +50,11 @@ namespace WorkingWithFilesTest
         [TestMethod]
         public void LongestWordWorks()
         {
-            var expected = "correctly.";
+            var expected = "correctly";
 
             var actual = WorkingWithFiles.WorkingWithFiles.LongestWord("WordCounter.txt");
 
-            actual.Should().Be(expected, because: "the longest words in the file is 'correctly.', so that is what should be returned");
+            actual.Should().Be(expected, because: "the longest words in the file is 'correctly', so that is what should be returned");
         }
 
         [TestMethod]
@@ -74,7 +74,7 @@ namespace WorkingWithFilesTest
 
             var actual = WorkingWithFiles.WorkingWithFiles.LongestWord("EmptyFile.txt");
 
-            actual.Should().Be(expected, because: "the file contains no words.");
+            actual.Should().Be(expected, because: "the file contains no words");
         }
 
     }

@@ -6,6 +6,9 @@ using System.IO;
 
 namespace WorkingWithFiles
 {
+    // If you need to reference the files that are used for the tests, they are located in the
+    // Solution Explorer inside the folder 'TextFiles'.
+
     public static class WorkingWithFiles
     {
         // 1- Write a method that reads a text file and returns the number of words. Ex. The file
