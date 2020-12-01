@@ -50,11 +50,11 @@ namespace WorkingWithFilesTest
         [TestMethod]
         public void LongestWordWorks()
         {
-            var expected = "correctly";
+            var expected = "exercise";
 
             var actual = WorkingWithFiles.WorkingWithFiles.LongestWord("WordCounter.txt");
 
-            actual.Should().Be(expected, because: "the longest words in the file is 'correctly', so that is what should be returned");
+            actual.Should().Be(expected, because: "the longest words in the file is 'exercise', so that is what should be returned");
         }
 
         [TestMethod]
