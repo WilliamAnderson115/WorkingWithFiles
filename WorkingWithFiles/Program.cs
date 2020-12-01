@@ -22,7 +22,7 @@ namespace WorkingWithFiles
 
         // 2- Write a method that reads a text file and returns the longest word in the file. Ex.
         // The file contains, "The dog named Maximus ran away from home." The method should return
-        // "Maximus" the longest word contained in the file. Return "File is empty" if the file is empty.
+        // "Maximus" the longest word contained in the file. Return "File is Empty" if the file is empty.
         // .Trim() might be useful in this situation.
         public static string LongestWord(string fileName)
         {
