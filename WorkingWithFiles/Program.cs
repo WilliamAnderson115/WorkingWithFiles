@@ -17,7 +17,19 @@ namespace WorkingWithFiles
         // .Trim() might be useful in this situation.
         public static int WordCount(string fileName)
         {
-            return default;
+            int wordCount = 0;
+            var path = @"C:\Users\wja96\Desktop\GitHubShop\WorkingWithFiles\WorkingWithFiles\" + fileName;
+            var content = File.ReadAllLines(path);
+            foreach(string word in content)
+            {
+                var test = word.Trim().Split(' ');
+                foreach (string word2 in test)
+                {
+                    wordCount++;
+                }
+            }
+
+            return wordCount;
         }
 
         // 2- Write a method that reads a text file and returns the longest word in the file. Ex.
@@ -26,7 +38,22 @@ namespace WorkingWithFiles
         // .Trim() might be useful in this situation.
         public static string LongestWord(string fileName)
         {
-            return default;
+            string LongestWord = "";
+
+            var path = @"C:\Users\wja96\Desktop\GitHubShop\WorkingWithFiles\WorkingWithFiles\" + fileName;
+            var content = File.ReadAllLines(path);
+            foreach (string word in content)
+            {
+                var test = word.Trim().Split(' ');
+                foreach (string word2 in test)
+                {
+                    if (word2.Length > LongestWord.Length)
+                        LongestWord = word2;
+                }
+            }
+            if (string.IsNullOrEmpty(LongestWord))
+                LongestWord = "File is Empty";
+            return LongestWord;
         }
     }
 
